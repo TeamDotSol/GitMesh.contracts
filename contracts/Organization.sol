@@ -61,6 +61,10 @@ contract Organization {
         return repoNames;
     }
 
+    // Get a release by tag
+    function getRelease (address repo, bytes32 tag) public view returns (bytes32 commitHash) {
+        return Repo(repo).releases(tag);
+    }
 
     // ----------------------------------------------   
     // ------------ Public Functions ----------------
@@ -96,20 +100,20 @@ contract Organization {
     }
 
     // Make a commit (proxied through for permissions)
-    function commit (bytes32 commitHash, string ipfsHash, address repo) public {
+    function commit (bytes32 commitHash, string ipfsHash, address repo, bytes32 branch) public {
         Role memory senderRole = roles[members[msg.sender]];
 
         assert(senderRole.commit);
-
-        Repo(repo).commit(commitHash, ipfsHash);
+    
+        Repo(repo).commit(commitHash, ipfsHash, branch, msg.sender);
     }
 
     // Tag a release to a specific commit hash (proxied through for permissions)
-    function tagRelease (bytes32 release, bytes32 commitHash, address repo) public {
+    function tagRelease (bytes32 tag, bytes32 commitHash, address repo) public {
         Role memory senderRole = roles[members[msg.sender]];
 
         assert(senderRole.release);
 
-        Repo(repo).tagRelease(release, commitHash);
+        Repo(repo).tagRelease(tag, commitHash);
     }
 }
