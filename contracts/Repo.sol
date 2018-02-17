@@ -11,7 +11,7 @@ contract Repo {
         _;
     }
 
-    function Repo () {
+    function Repo () public {
         organization = msg.sender;
     }
 

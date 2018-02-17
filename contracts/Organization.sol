@@ -9,6 +9,7 @@ contract Organization {
     struct Role {
         bytes32 name;
         bool create;
+        bool release;
         bool commit;
         bool merge;
     }
@@ -32,20 +33,21 @@ contract Organization {
     }
 
     // Get a repo address by name
-    function getRepo (bytes32 name) public returns (address repo) {
+    function getRepo (bytes32 name) public view returns (address repo) {
         return repos[name];
     }
 
     // Get a list of repo names
-    function listRepos () public returns (bytes32[] names) {
+    function listRepos () public view returns (bytes32[] names) {
         return repoNames;
     }
 
     // Add or update a role
-    function createRole (bytes32 role, bool create, bool commit, bool merge) external onlyOwner {
+    function createRole (bytes32 role, bool create, bool release, bool commit, bool merge) external onlyOwner {
         roles[role] = Role({
             name: role,
             create: create,
+            release: release,
             commit: commit,
             merge: merge
         });
@@ -67,5 +69,23 @@ contract Organization {
 
         repos[name] = new Repo();
         repoNames.push(name);
+    }
+
+    // Make a commit (proxied through for permissions)
+    function commit (bytes32 commitHash, string ipfsHash, address repo) public {
+        Role memory senderRole = roles[members[msg.sender]];
+
+        assert(senderRole.commit);
+
+        Repo(repo).commit(commitHash, ipfsHash);
+    }
+
+    // Tag a release to a specific commit hash (proxied through for permissions)
+    function tagRelease (bytes32 release, bytes32 commitHash, address repo) public {
+        Role memory senderRole = roles[members[msg.sender]];
+
+        assert(senderRole.release);
+
+        Repo(repo).tagRelease(release, commitHash);
     }
 }
