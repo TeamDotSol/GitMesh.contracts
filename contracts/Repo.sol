@@ -23,6 +23,16 @@ contract Repo {
         organization = msg.sender;
     }
 
+    // Get a release by tag
+    function getRelease (bytes32 tag) public view returns (bytes32 commitHash) {
+        return releases[tag];
+    }
+
+    // Get commit hashes from branch
+    function getCommitHashes (bytes32 branch) public view returns (bytes32[] _commitHashes) {
+        return commitHashes[branch];
+    }
+
     // Tag a release to a specific commit hash
     function tagRelease (bytes32 tag, bytes32 commitHash) public onlyOrg {
         // Ensure this commit exists somewhere

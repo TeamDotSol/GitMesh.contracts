@@ -61,11 +61,6 @@ contract Organization {
         return repoNames;
     }
 
-    // Get a release by tag
-    function getRelease (address repo, bytes32 tag) public view returns (bytes32 commitHash) {
-        return Repo(repo).releases(tag);
-    }
-
     // ----------------------------------------------   
     // ------------ Public Functions ----------------
     // ----------------------------------------------
