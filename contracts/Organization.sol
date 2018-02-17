@@ -3,6 +3,10 @@ pragma solidity ^0.4.12;
 import "./Repo.sol";
 
 contract Organization {
+    // ----------------------------------------------
+    // ---------------- Globals ---------------------
+    // ----------------------------------------------
+
     address public owner;
 
     // Permissions role
@@ -32,6 +36,21 @@ contract Organization {
         owner = msg.sender;
     }
 
+    // ----------------------------------------------   
+    // ------------ Getter Functions ----------------
+    // ----------------------------------------------
+
+    function getRole (bytes32 role) public view returns (bool create, bool release, bool commit, bool merge) {
+        Role memory r = roles[role];
+
+        return (
+            r.create,
+            r.release,
+            r.commit,
+            r.merge
+        );
+    }
+
     // Get a repo address by name
     function getRepo (bytes32 name) public view returns (address repo) {
         return repos[name];
@@ -41,6 +60,11 @@ contract Organization {
     function listRepos () public view returns (bytes32[] names) {
         return repoNames;
     }
+
+
+    // ----------------------------------------------   
+    // ------------ Public Functions ----------------
+    // ----------------------------------------------
 
     // Add or update a role
     function createRole (bytes32 role, bool create, bool release, bool commit, bool merge) external onlyOwner {
