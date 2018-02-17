@@ -4,6 +4,14 @@ import "./Repo.sol";
 
 contract Organization {
     // ----------------------------------------------
+    // ----------------- Events ---------------------
+    // ----------------------------------------------
+    event RoleCreated(bytes32 name);
+    event RepoCreated(bytes32 name, address repoAddress);
+    event Commit(bytes32 commitHashe);
+    event Release(bytes32 tag);
+
+    // ----------------------------------------------
     // ---------------- Globals ---------------------
     // ----------------------------------------------
 
@@ -67,6 +75,8 @@ contract Organization {
 
     // Add or update a role
     function createRole (bytes32 role, bool create, bool release, bool commit, bool merge) external onlyOwner {
+        RoleCreated(role);
+
         roles[role] = Role({
             name: role,
             create: create,
@@ -90,8 +100,10 @@ contract Organization {
         assert(senderRole.create);
         assert(repos[name] == 0x0);
 
-        repos[name] = new Repo();
+        repos[name] = address(new Repo());
         repoNames.push(name);
+
+        RepoCreated(name, repos[name]);
     }
 
     // Make a commit (proxied through for permissions)
@@ -101,6 +113,8 @@ contract Organization {
         assert(senderRole.commit);
     
         Repo(repo).commit(commitHash, ipfsHash, branch, msg.sender);
+
+        Commit(commitHash);
     }
 
     // Tag a release to a specific commit hash (proxied through for permissions)
@@ -110,5 +124,7 @@ contract Organization {
         assert(senderRole.release);
 
         Repo(repo).tagRelease(tag, commitHash);
+
+        Release(tag);
     }
 }
