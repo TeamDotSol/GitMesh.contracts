@@ -13,6 +13,7 @@ contract Repo {
     mapping(bytes32 => bytes32[]) public commitHashes;
     mapping(bytes32 => Commit) public commits;
     mapping(bytes32 => bytes32) public releases;
+    bytes32[] tags;
 
     modifier onlyOrg {
         require(msg.sender == organization);
@@ -21,6 +22,11 @@ contract Repo {
 
     function Repo () public {
         organization = msg.sender;
+    }
+
+    // Return tagged releases
+    function getTags () public view returns (bytes32[] _tags) {
+        return tags;
     }
 
     // Get a release by tag
@@ -37,7 +43,11 @@ contract Repo {
     function tagRelease (bytes32 tag, bytes32 commitHash) public onlyOrg {
         // Ensure this commit exists somewhere
         assert(commits[commitHash].at != 0x0);
+        for (uint i = 0; i < tags.length; i++) {
+            assert(tags[i] != tag);
+        }
         releases[tag] = commitHash;
+        tags.push(tag);
     }
 
     // Make a commit
