@@ -1,0 +1,27 @@
+{
+  "name": "gitmesh.contracts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "truffle.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "truffle": "^4.0.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "migrate": "node_modules/truffle/build/cli.bundled.js migrate",
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TeamDotSol/GitMesh.contracts.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TeamDotSol/GitMesh.contracts/issues"
+  },
+  "homepage": "https://github.com/TeamDotSol/GitMesh.contracts#readme"
+}

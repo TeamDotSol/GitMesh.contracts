@@ -1,0 +1,1901 @@
+{
+  "contractName": "Repo",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "organization",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "commitHash",
+          "type": "bytes32"
+        },
+        {
+          "name": "ipfsHash",
+          "type": "string"
+        },
+        {
+          "name": "branch",
+          "type": "bytes32"
+        },
+        {
+          "name": "author",
+          "type": "address"
+        }
+      ],
+      "name": "commit",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "name": "commits",
+      "outputs": [
+        {
+          "name": "commitHash",
+          "type": "bytes32"
+        },
+        {
+          "name": "ipfsHash",
+          "type": "string"
+        },
+        {
+          "name": "author",
+          "type": "address"
+        },
+        {
+          "name": "at",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "bytes32"
+        },
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "commitHashes",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "name": "releases",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "tag",
+          "type": "bytes32"
+        },
+        {
+          "name": "commitHash",
+          "type": "bytes32"
+        }
+      ],
+      "name": "tagRelease",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    }
+  ],
+  "bytecode": "0x6060604052341561000f57600080fd5b336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506107c18061005e6000396000f300606060405260043610610078576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806323bd4d7a1461007d578063273040c1146100d257806347885781146101685780636cf2678a1461026e578063f491a84c146102ba578063f4e7732e146102fd575b600080fd5b341561008857600080fd5b610090610331565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34156100dd57600080fd5b61016660048080356000191690602001909190803590602001908201803590602001908080601f016020809104026020016040519081016040528093929190818152602001838380828437820191505050505050919080356000191690602001909190803573ffffffffffffffffffffffffffffffffffffffff16906020019091905050610356565b005b341561017357600080fd5b61018d600480803560001916906020019091905050610559565b604051808560001916600019168152602001806020018473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200183815260200182810382528581815460018160011615610100020316600290048152602001915080546001816001161561010002031660029004801561025c5780601f106102315761010080835404028352916020019161025c565b820191906000526020600020905b81548152906001019060200180831161023f57829003601f168201915b50509550505050505060405180910390f35b341561027957600080fd5b61029c6004808035600019169060200190919080359060200190919050506105a8565b60405180826000191660001916815260200191505060405180910390f35b34156102c557600080fd5b6102df6004808035600019169060200190919050506105d9565b60405180826000191660001916815260200191505060405180910390f35b341561030857600080fd5b61032f600480803560001916906020019091908035600019169060200190919050506105f1565b005b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156103b357600080fd5b600090505b600160008460001916600019168152602001908152602001600020805490508110156104325784600019166001600085600019166000191681526020019081526020016000208281548110151561040b57fe5b906000526020600020900154600019161415151561042557fe5b80806001019150506103b8565b600160008460001916600019168152602001908152602001600020805480600101828161045f919061069f565b916000526020600020900160008790919091509060001916905550608060405190810160405280866000191681526020018581526020018373ffffffffffffffffffffffffffffffffffffffff168152602001428152506002600087600019166000191681526020019081526020016000206000820151816000019060001916905560208201518160010190805190602001906104fd9291906106cb565b5060408201518160020160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550606082015181600301559050505050505050565b600260205280600052604060002060009150905080600001549080600101908060020160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16908060030154905084565b6001602052816000526040600020818154811015156105c357fe5b9060005260206000209001600091509150505481565b60036020528060005260406000206000915090505481565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561064c57600080fd5b6000600260008360001916600019168152602001908152602001600020600301541415151561067757fe5b8060036000846000191660001916815260200190815260200160002081600019169055505050565b8154818355818115116106c6578183600052602060002091820191016106c5919061074b565b5b505050565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061070c57805160ff191683800117855561073a565b8280016001018555821561073a579182015b8281111561073957825182559160200191906001019061071e565b5b5090506107479190610770565b5090565b61076d91905b80821115610769576000816000905550600101610751565b5090565b90565b61079291905b8082111561078e576000816000905550600101610776565b5090565b905600a165627a7a72305820f9c9cdec4885956e371c8d1068f472efaedea8f38514a27dc81d54d829f64ee10029",
+  "deployedBytecode": "0x606060405260043610610078576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806323bd4d7a1461007d578063273040c1146100d257806347885781146101685780636cf2678a1461026e578063f491a84c146102ba578063f4e7732e146102fd575b600080fd5b341561008857600080fd5b610090610331565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34156100dd57600080fd5b61016660048080356000191690602001909190803590602001908201803590602001908080601f016020809104026020016040519081016040528093929190818152602001838380828437820191505050505050919080356000191690602001909190803573ffffffffffffffffffffffffffffffffffffffff16906020019091905050610356565b005b341561017357600080fd5b61018d600480803560001916906020019091905050610559565b604051808560001916600019168152602001806020018473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200183815260200182810382528581815460018160011615610100020316600290048152602001915080546001816001161561010002031660029004801561025c5780601f106102315761010080835404028352916020019161025c565b820191906000526020600020905b81548152906001019060200180831161023f57829003601f168201915b50509550505050505060405180910390f35b341561027957600080fd5b61029c6004808035600019169060200190919080359060200190919050506105a8565b60405180826000191660001916815260200191505060405180910390f35b34156102c557600080fd5b6102df6004808035600019169060200190919050506105d9565b60405180826000191660001916815260200191505060405180910390f35b341561030857600080fd5b61032f600480803560001916906020019091908035600019169060200190919050506105f1565b005b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156103b357600080fd5b600090505b600160008460001916600019168152602001908152602001600020805490508110156104325784600019166001600085600019166000191681526020019081526020016000208281548110151561040b57fe5b906000526020600020900154600019161415151561042557fe5b80806001019150506103b8565b600160008460001916600019168152602001908152602001600020805480600101828161045f919061069f565b916000526020600020900160008790919091509060001916905550608060405190810160405280866000191681526020018581526020018373ffffffffffffffffffffffffffffffffffffffff168152602001428152506002600087600019166000191681526020019081526020016000206000820151816000019060001916905560208201518160010190805190602001906104fd9291906106cb565b5060408201518160020160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550606082015181600301559050505050505050565b600260205280600052604060002060009150905080600001549080600101908060020160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16908060030154905084565b6001602052816000526040600020818154811015156105c357fe5b9060005260206000209001600091509150505481565b60036020528060005260406000206000915090505481565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561064c57600080fd5b6000600260008360001916600019168152602001908152602001600020600301541415151561067757fe5b8060036000846000191660001916815260200190815260200160002081600019169055505050565b8154818355818115116106c6578183600052602060002091820191016106c5919061074b565b5b505050565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061070c57805160ff191683800117855561073a565b8280016001018555821561073a579182015b8281111561073957825182559160200191906001019061071e565b5b5090506107479190610770565b5090565b61076d91905b80821115610769576000816000905550600101610751565b5090565b90565b61079291905b8082111561078e576000816000905550600101610776565b5090565b905600a165627a7a72305820f9c9cdec4885956e371c8d1068f472efaedea8f38514a27dc81d54d829f64ee10029",
+  "sourceMap": "26:1301:2:-;;;439:66;;;;;;;;488:10;473:12;;:25;;;;;;;;;;;;;;;;;;26:1301;;;;;;",
+  "deployedSourceMap": "26:1301:2:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;46:27;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;791:534;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;256:41;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;201:49;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;303:43;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;558:206;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;46:27;;;;;;;;;;;;;:::o;791:534::-;984:6;402:12;;;;;;;;;;;388:26;;:10;:26;;;380:35;;;;;;;;993:1;984:10;;979:125;1000:12;:20;1013:6;1000:20;;;;;;;;;;;;;;;;;:27;;;;996:1;:31;979:125;;;1082:10;1055:37;;;:12;:20;1068:6;1055:20;;;;;;;;;;;;;;;;;1076:1;1055:23;;;;;;;;;;;;;;;;;;;:37;;;;;1048:45;;;;;;1029:3;;;;;;;979:125;;;1114:12;:20;1127:6;1114:20;;;;;;;;;;;;;;;;;:37;;;;;;;;;;;:::i;:::-;;;;;;;;;;1140:10;1114:37;;;;;;;;;;;;1183:135;;;;;;;;;1216:10;1183:135;;;;;;;1250:8;1183:135;;;;1280:6;1183:135;;;;;;1304:3;1183:135;;;1161:7;:19;1169:10;1161:19;;;;;;;;;;;;;;;;;:157;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;791:534;;;;;:::o;256:41::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;201:49::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;303:43::-;;;;;;;;;;;;;;;;;:::o;558:206::-;402:12;;;;;;;;;;;388:26;;:10;:26;;;380:35;;;;;;;;717:3;691:7;:19;699:10;691:19;;;;;;;;;;;;;;;;;:22;;;:29;;684:37;;;;;;747:10;731:8;:13;740:3;731:13;;;;;;;;;;;;;;;;;:26;;;;;;;558:206;;:::o;26:1301::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
+  "source": "pragma solidity ^0.4.12;\n\ncontract Repo {\n    address public organization;\n\n    struct Commit {\n        bytes32 commitHash;\n        string ipfsHash;\n        address author;\n        uint at;\n    }\n\n    mapping(bytes32 => bytes32[]) public commitHashes;\n    mapping(bytes32 => Commit) public commits;\n    mapping(bytes32 => bytes32) public releases;\n\n    modifier onlyOrg {\n        require(msg.sender == organization);\n        _;\n    }\n\n    function Repo () public {\n        organization = msg.sender;\n    }\n\n    // Tag a release to a specific commit hash\n    function tagRelease (bytes32 tag, bytes32 commitHash) public onlyOrg {\n        // Ensure this commit exists somewhere\n        assert(commits[commitHash].at != 0x0);\n        releases[tag] = commitHash;\n    }\n\n    // Make a commit\n    function commit (bytes32 commitHash, string ipfsHash, bytes32 branch, address author) public onlyOrg {\n        // make sure this branch does not already have a commit by this hash\n        for (uint i = 0; i < commitHashes[branch].length; i++) {\n            assert(commitHashes[branch][i] != commitHash);\n        }\n\n        commitHashes[branch].push(commitHash);\n        commits[commitHash] = Commit({\n            commitHash: commitHash,\n            ipfsHash: ipfsHash,\n            author: author,\n            at: now\n        });\n    }\n}",
+  "sourcePath": "/Users/matt/Documents/ETHDenver/GitMesh.contracts/contracts/Repo.sol",
+  "ast": {
+    "attributes": {
+      "absolutePath": "/Users/matt/Documents/ETHDenver/GitMesh.contracts/contracts/Repo.sol",
+      "exportedSymbols": {
+        "Repo": [
+          469
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "^",
+            "0.4",
+            ".12"
+          ]
+        },
+        "id": 342,
+        "name": "PragmaDirective",
+        "src": "0:24:2"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "documentation": null,
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            469
+          ],
+          "name": "Repo",
+          "scope": 470
+        },
+        "children": [
+          {
+            "attributes": {
+              "constant": false,
+              "name": "organization",
+              "scope": 469,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "address",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "address",
+                  "type": "address"
+                },
+                "id": 343,
+                "name": "ElementaryTypeName",
+                "src": "46:7:2"
+              }
+            ],
+            "id": 344,
+            "name": "VariableDeclaration",
+            "src": "46:27:2"
+          },
+          {
+            "attributes": {
+              "canonicalName": "Repo.Commit",
+              "name": "Commit",
+              "scope": 469,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "commitHash",
+                  "scope": 353,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "bytes32",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "bytes32",
+                      "type": "bytes32"
+                    },
+                    "id": 345,
+                    "name": "ElementaryTypeName",
+                    "src": "104:7:2"
+                  }
+                ],
+                "id": 346,
+                "name": "VariableDeclaration",
+                "src": "104:18:2"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "ipfsHash",
+                  "scope": 353,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "string storage pointer",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "string",
+                      "type": "string storage pointer"
+                    },
+                    "id": 347,
+                    "name": "ElementaryTypeName",
+                    "src": "132:6:2"
+                  }
+                ],
+                "id": 348,
+                "name": "VariableDeclaration",
+                "src": "132:15:2"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "author",
+                  "scope": 353,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "address",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "address",
+                      "type": "address"
+                    },
+                    "id": 349,
+                    "name": "ElementaryTypeName",
+                    "src": "157:7:2"
+                  }
+                ],
+                "id": 350,
+                "name": "VariableDeclaration",
+                "src": "157:14:2"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "at",
+                  "scope": 353,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "uint256",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint",
+                      "type": "uint256"
+                    },
+                    "id": 351,
+                    "name": "ElementaryTypeName",
+                    "src": "181:4:2"
+                  }
+                ],
+                "id": 352,
+                "name": "VariableDeclaration",
+                "src": "181:7:2"
+              }
+            ],
+            "id": 353,
+            "name": "StructDefinition",
+            "src": "80:115:2"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "commitHashes",
+              "scope": 469,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "mapping(bytes32 => bytes32[] storage ref)",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "type": "mapping(bytes32 => bytes32[] storage ref)"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "bytes32",
+                      "type": "bytes32"
+                    },
+                    "id": 354,
+                    "name": "ElementaryTypeName",
+                    "src": "209:7:2"
+                  },
+                  {
+                    "attributes": {
+                      "length": null,
+                      "type": "bytes32[] storage pointer"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bytes32",
+                          "type": "bytes32"
+                        },
+                        "id": 355,
+                        "name": "ElementaryTypeName",
+                        "src": "220:7:2"
+                      }
+                    ],
+                    "id": 356,
+                    "name": "ArrayTypeName",
+                    "src": "220:9:2"
+                  }
+                ],
+                "id": 357,
+                "name": "Mapping",
+                "src": "201:29:2"
+              }
+            ],
+            "id": 358,
+            "name": "VariableDeclaration",
+            "src": "201:49:2"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "commits",
+              "scope": 469,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "mapping(bytes32 => struct Repo.Commit storage ref)",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "type": "mapping(bytes32 => struct Repo.Commit storage ref)"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "bytes32",
+                      "type": "bytes32"
+                    },
+                    "id": 359,
+                    "name": "ElementaryTypeName",
+                    "src": "264:7:2"
+                  },
+                  {
+                    "attributes": {
+                      "contractScope": null,
+                      "name": "Commit",
+                      "referencedDeclaration": 353,
+                      "type": "struct Repo.Commit storage pointer"
+                    },
+                    "id": 360,
+                    "name": "UserDefinedTypeName",
+                    "src": "275:6:2"
+                  }
+                ],
+                "id": 361,
+                "name": "Mapping",
+                "src": "256:26:2"
+              }
+            ],
+            "id": 362,
+            "name": "VariableDeclaration",
+            "src": "256:41:2"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "releases",
+              "scope": 469,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "mapping(bytes32 => bytes32)",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "type": "mapping(bytes32 => bytes32)"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "bytes32",
+                      "type": "bytes32"
+                    },
+                    "id": 363,
+                    "name": "ElementaryTypeName",
+                    "src": "311:7:2"
+                  },
+                  {
+                    "attributes": {
+                      "name": "bytes32",
+                      "type": "bytes32"
+                    },
+                    "id": 364,
+                    "name": "ElementaryTypeName",
+                    "src": "322:7:2"
+                  }
+                ],
+                "id": 365,
+                "name": "Mapping",
+                "src": "303:27:2"
+              }
+            ],
+            "id": 366,
+            "name": "VariableDeclaration",
+            "src": "303:43:2"
+          },
+          {
+            "attributes": {
+              "name": "onlyOrg",
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 367,
+                "name": "ParameterList",
+                "src": "370:0:2"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_bool",
+                                  "typeString": "bool"
+                                }
+                              ],
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 484,
+                              "type": "function (bool) pure",
+                              "value": "require"
+                            },
+                            "id": 368,
+                            "name": "Identifier",
+                            "src": "380:7:2"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "commonType": {
+                                "typeIdentifier": "t_address",
+                                "typeString": "address"
+                              },
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "operator": "==",
+                              "type": "bool"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "member_name": "sender",
+                                  "referencedDeclaration": null,
+                                  "type": "address"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 481,
+                                      "type": "msg",
+                                      "value": "msg"
+                                    },
+                                    "id": 369,
+                                    "name": "Identifier",
+                                    "src": "388:3:2"
+                                  }
+                                ],
+                                "id": 370,
+                                "name": "MemberAccess",
+                                "src": "388:10:2"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 344,
+                                  "type": "address",
+                                  "value": "organization"
+                                },
+                                "id": 371,
+                                "name": "Identifier",
+                                "src": "402:12:2"
+                              }
+                            ],
+                            "id": 372,
+                            "name": "BinaryOperation",
+                            "src": "388:26:2"
+                          }
+                        ],
+                        "id": 373,
+                        "name": "FunctionCall",
+                        "src": "380:35:2"
+                      }
+                    ],
+                    "id": 374,
+                    "name": "ExpressionStatement",
+                    "src": "380:35:2"
+                  },
+                  {
+                    "id": 375,
+                    "name": "PlaceholderStatement",
+                    "src": "425:1:2"
+                  }
+                ],
+                "id": 376,
+                "name": "Block",
+                "src": "370:63:2"
+              }
+            ],
+            "id": 377,
+            "name": "ModifierDefinition",
+            "src": "353:80:2"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "implemented": true,
+              "isConstructor": true,
+              "modifiers": [
+                null
+              ],
+              "name": "Repo",
+              "payable": false,
+              "scope": 469,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 378,
+                "name": "ParameterList",
+                "src": "453:2:2"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 379,
+                "name": "ParameterList",
+                "src": "463:0:2"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "address"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 344,
+                              "type": "address",
+                              "value": "organization"
+                            },
+                            "id": 380,
+                            "name": "Identifier",
+                            "src": "473:12:2"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "sender",
+                              "referencedDeclaration": null,
+                              "type": "address"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 481,
+                                  "type": "msg",
+                                  "value": "msg"
+                                },
+                                "id": 381,
+                                "name": "Identifier",
+                                "src": "488:3:2"
+                              }
+                            ],
+                            "id": 382,
+                            "name": "MemberAccess",
+                            "src": "488:10:2"
+                          }
+                        ],
+                        "id": 383,
+                        "name": "Assignment",
+                        "src": "473:25:2"
+                      }
+                    ],
+                    "id": 384,
+                    "name": "ExpressionStatement",
+                    "src": "473:25:2"
+                  }
+                ],
+                "id": 385,
+                "name": "Block",
+                "src": "463:42:2"
+              }
+            ],
+            "id": 386,
+            "name": "FunctionDefinition",
+            "src": "439:66:2"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "implemented": true,
+              "isConstructor": false,
+              "name": "tagRelease",
+              "payable": false,
+              "scope": 469,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "tag",
+                      "scope": 411,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bytes32",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bytes32",
+                          "type": "bytes32"
+                        },
+                        "id": 387,
+                        "name": "ElementaryTypeName",
+                        "src": "579:7:2"
+                      }
+                    ],
+                    "id": 388,
+                    "name": "VariableDeclaration",
+                    "src": "579:11:2"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "commitHash",
+                      "scope": 411,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bytes32",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bytes32",
+                          "type": "bytes32"
+                        },
+                        "id": 389,
+                        "name": "ElementaryTypeName",
+                        "src": "592:7:2"
+                      }
+                    ],
+                    "id": 390,
+                    "name": "VariableDeclaration",
+                    "src": "592:18:2"
+                  }
+                ],
+                "id": 391,
+                "name": "ParameterList",
+                "src": "578:33:2"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 394,
+                "name": "ParameterList",
+                "src": "627:0:2"
+              },
+              {
+                "attributes": {
+                  "arguments": [
+                    null
+                  ]
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "argumentTypes": null,
+                      "overloadedDeclarations": [
+                        null
+                      ],
+                      "referencedDeclaration": 377,
+                      "type": "modifier ()",
+                      "value": "onlyOrg"
+                    },
+                    "id": 392,
+                    "name": "Identifier",
+                    "src": "619:7:2"
+                  }
+                ],
+                "id": 393,
+                "name": "ModifierInvocation",
+                "src": "619:7:2"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_bool",
+                                  "typeString": "bool"
+                                }
+                              ],
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 472,
+                              "type": "function (bool) pure",
+                              "value": "assert"
+                            },
+                            "id": 395,
+                            "name": "Identifier",
+                            "src": "684:6:2"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "commonType": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              },
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "operator": "!=",
+                              "type": "bool"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": true,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "member_name": "at",
+                                  "referencedDeclaration": 352,
+                                  "type": "uint256"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "isConstant": false,
+                                      "isLValue": true,
+                                      "isPure": false,
+                                      "lValueRequested": false,
+                                      "type": "struct Repo.Commit storage ref"
+                                    },
+                                    "children": [
+                                      {
+                                        "attributes": {
+                                          "argumentTypes": null,
+                                          "overloadedDeclarations": [
+                                            null
+                                          ],
+                                          "referencedDeclaration": 362,
+                                          "type": "mapping(bytes32 => struct Repo.Commit storage ref)",
+                                          "value": "commits"
+                                        },
+                                        "id": 396,
+                                        "name": "Identifier",
+                                        "src": "691:7:2"
+                                      },
+                                      {
+                                        "attributes": {
+                                          "argumentTypes": null,
+                                          "overloadedDeclarations": [
+                                            null
+                                          ],
+                                          "referencedDeclaration": 390,
+                                          "type": "bytes32",
+                                          "value": "commitHash"
+                                        },
+                                        "id": 397,
+                                        "name": "Identifier",
+                                        "src": "699:10:2"
+                                      }
+                                    ],
+                                    "id": 398,
+                                    "name": "IndexAccess",
+                                    "src": "691:19:2"
+                                  }
+                                ],
+                                "id": 399,
+                                "name": "MemberAccess",
+                                "src": "691:22:2"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "hexvalue": "307830",
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "lValueRequested": false,
+                                  "subdenomination": null,
+                                  "token": "number",
+                                  "type": "int_const 0",
+                                  "value": "0x0"
+                                },
+                                "id": 400,
+                                "name": "Literal",
+                                "src": "717:3:2"
+                              }
+                            ],
+                            "id": 401,
+                            "name": "BinaryOperation",
+                            "src": "691:29:2"
+                          }
+                        ],
+                        "id": 402,
+                        "name": "FunctionCall",
+                        "src": "684:37:2"
+                      }
+                    ],
+                    "id": 403,
+                    "name": "ExpressionStatement",
+                    "src": "684:37:2"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "bytes32"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": true,
+                              "type": "bytes32"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 366,
+                                  "type": "mapping(bytes32 => bytes32)",
+                                  "value": "releases"
+                                },
+                                "id": 404,
+                                "name": "Identifier",
+                                "src": "731:8:2"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 388,
+                                  "type": "bytes32",
+                                  "value": "tag"
+                                },
+                                "id": 405,
+                                "name": "Identifier",
+                                "src": "740:3:2"
+                              }
+                            ],
+                            "id": 406,
+                            "name": "IndexAccess",
+                            "src": "731:13:2"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 390,
+                              "type": "bytes32",
+                              "value": "commitHash"
+                            },
+                            "id": 407,
+                            "name": "Identifier",
+                            "src": "747:10:2"
+                          }
+                        ],
+                        "id": 408,
+                        "name": "Assignment",
+                        "src": "731:26:2"
+                      }
+                    ],
+                    "id": 409,
+                    "name": "ExpressionStatement",
+                    "src": "731:26:2"
+                  }
+                ],
+                "id": 410,
+                "name": "Block",
+                "src": "627:137:2"
+              }
+            ],
+            "id": 411,
+            "name": "FunctionDefinition",
+            "src": "558:206:2"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "implemented": true,
+              "isConstructor": false,
+              "name": "commit",
+              "payable": false,
+              "scope": 469,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "commitHash",
+                      "scope": 468,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bytes32",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bytes32",
+                          "type": "bytes32"
+                        },
+                        "id": 412,
+                        "name": "ElementaryTypeName",
+                        "src": "808:7:2"
+                      }
+                    ],
+                    "id": 413,
+                    "name": "VariableDeclaration",
+                    "src": "808:18:2"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "ipfsHash",
+                      "scope": 468,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "string memory",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string storage pointer"
+                        },
+                        "id": 414,
+                        "name": "ElementaryTypeName",
+                        "src": "828:6:2"
+                      }
+                    ],
+                    "id": 415,
+                    "name": "VariableDeclaration",
+                    "src": "828:15:2"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "branch",
+                      "scope": 468,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bytes32",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bytes32",
+                          "type": "bytes32"
+                        },
+                        "id": 416,
+                        "name": "ElementaryTypeName",
+                        "src": "845:7:2"
+                      }
+                    ],
+                    "id": 417,
+                    "name": "VariableDeclaration",
+                    "src": "845:14:2"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "author",
+                      "scope": 468,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "type": "address"
+                        },
+                        "id": 418,
+                        "name": "ElementaryTypeName",
+                        "src": "861:7:2"
+                      }
+                    ],
+                    "id": 419,
+                    "name": "VariableDeclaration",
+                    "src": "861:14:2"
+                  }
+                ],
+                "id": 420,
+                "name": "ParameterList",
+                "src": "807:69:2"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 423,
+                "name": "ParameterList",
+                "src": "892:0:2"
+              },
+              {
+                "attributes": {
+                  "arguments": [
+                    null
+                  ]
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "argumentTypes": null,
+                      "overloadedDeclarations": [
+                        null
+                      ],
+                      "referencedDeclaration": 377,
+                      "type": "modifier ()",
+                      "value": "onlyOrg"
+                    },
+                    "id": 421,
+                    "name": "Identifier",
+                    "src": "884:7:2"
+                  }
+                ],
+                "id": 422,
+                "name": "ModifierInvocation",
+                "src": "884:7:2"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "assignments": [
+                            425
+                          ]
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "constant": false,
+                              "name": "i",
+                              "scope": 468,
+                              "stateVariable": false,
+                              "storageLocation": "default",
+                              "type": "uint256",
+                              "value": null,
+                              "visibility": "internal"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "name": "uint",
+                                  "type": "uint256"
+                                },
+                                "id": 424,
+                                "name": "ElementaryTypeName",
+                                "src": "984:4:2"
+                              }
+                            ],
+                            "id": 425,
+                            "name": "VariableDeclaration",
+                            "src": "984:6:2"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "hexvalue": "30",
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "subdenomination": null,
+                              "token": "number",
+                              "type": "int_const 0",
+                              "value": "0"
+                            },
+                            "id": 426,
+                            "name": "Literal",
+                            "src": "993:1:2"
+                          }
+                        ],
+                        "id": 427,
+                        "name": "VariableDeclarationStatement",
+                        "src": "984:10:2"
+                      },
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "commonType": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "<",
+                          "type": "bool"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 425,
+                              "type": "uint256",
+                              "value": "i"
+                            },
+                            "id": 428,
+                            "name": "Identifier",
+                            "src": "996:1:2"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "length",
+                              "referencedDeclaration": null,
+                              "type": "uint256"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": true,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "type": "bytes32[] storage ref"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 358,
+                                      "type": "mapping(bytes32 => bytes32[] storage ref)",
+                                      "value": "commitHashes"
+                                    },
+                                    "id": 429,
+                                    "name": "Identifier",
+                                    "src": "1000:12:2"
+                                  },
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 417,
+                                      "type": "bytes32",
+                                      "value": "branch"
+                                    },
+                                    "id": 430,
+                                    "name": "Identifier",
+                                    "src": "1013:6:2"
+                                  }
+                                ],
+                                "id": 431,
+                                "name": "IndexAccess",
+                                "src": "1000:20:2"
+                              }
+                            ],
+                            "id": 432,
+                            "name": "MemberAccess",
+                            "src": "1000:27:2"
+                          }
+                        ],
+                        "id": 433,
+                        "name": "BinaryOperation",
+                        "src": "996:31:2"
+                      },
+                      {
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "operator": "++",
+                              "prefix": false,
+                              "type": "uint256"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 425,
+                                  "type": "uint256",
+                                  "value": "i"
+                                },
+                                "id": 434,
+                                "name": "Identifier",
+                                "src": "1029:1:2"
+                              }
+                            ],
+                            "id": 435,
+                            "name": "UnaryOperation",
+                            "src": "1029:3:2"
+                          }
+                        ],
+                        "id": 436,
+                        "name": "ExpressionStatement",
+                        "src": "1029:3:2"
+                      },
+                      {
+                        "children": [
+                          {
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "isStructConstructorCall": false,
+                                  "lValueRequested": false,
+                                  "names": [
+                                    null
+                                  ],
+                                  "type": "tuple()",
+                                  "type_conversion": false
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": [
+                                        {
+                                          "typeIdentifier": "t_bool",
+                                          "typeString": "bool"
+                                        }
+                                      ],
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 472,
+                                      "type": "function (bool) pure",
+                                      "value": "assert"
+                                    },
+                                    "id": 437,
+                                    "name": "Identifier",
+                                    "src": "1048:6:2"
+                                  },
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "commonType": {
+                                        "typeIdentifier": "t_bytes32",
+                                        "typeString": "bytes32"
+                                      },
+                                      "isConstant": false,
+                                      "isLValue": false,
+                                      "isPure": false,
+                                      "lValueRequested": false,
+                                      "operator": "!=",
+                                      "type": "bool"
+                                    },
+                                    "children": [
+                                      {
+                                        "attributes": {
+                                          "argumentTypes": null,
+                                          "isConstant": false,
+                                          "isLValue": true,
+                                          "isPure": false,
+                                          "lValueRequested": false,
+                                          "type": "bytes32"
+                                        },
+                                        "children": [
+                                          {
+                                            "attributes": {
+                                              "argumentTypes": null,
+                                              "isConstant": false,
+                                              "isLValue": true,
+                                              "isPure": false,
+                                              "lValueRequested": false,
+                                              "type": "bytes32[] storage ref"
+                                            },
+                                            "children": [
+                                              {
+                                                "attributes": {
+                                                  "argumentTypes": null,
+                                                  "overloadedDeclarations": [
+                                                    null
+                                                  ],
+                                                  "referencedDeclaration": 358,
+                                                  "type": "mapping(bytes32 => bytes32[] storage ref)",
+                                                  "value": "commitHashes"
+                                                },
+                                                "id": 438,
+                                                "name": "Identifier",
+                                                "src": "1055:12:2"
+                                              },
+                                              {
+                                                "attributes": {
+                                                  "argumentTypes": null,
+                                                  "overloadedDeclarations": [
+                                                    null
+                                                  ],
+                                                  "referencedDeclaration": 417,
+                                                  "type": "bytes32",
+                                                  "value": "branch"
+                                                },
+                                                "id": 439,
+                                                "name": "Identifier",
+                                                "src": "1068:6:2"
+                                              }
+                                            ],
+                                            "id": 440,
+                                            "name": "IndexAccess",
+                                            "src": "1055:20:2"
+                                          },
+                                          {
+                                            "attributes": {
+                                              "argumentTypes": null,
+                                              "overloadedDeclarations": [
+                                                null
+                                              ],
+                                              "referencedDeclaration": 425,
+                                              "type": "uint256",
+                                              "value": "i"
+                                            },
+                                            "id": 441,
+                                            "name": "Identifier",
+                                            "src": "1076:1:2"
+                                          }
+                                        ],
+                                        "id": 442,
+                                        "name": "IndexAccess",
+                                        "src": "1055:23:2"
+                                      },
+                                      {
+                                        "attributes": {
+                                          "argumentTypes": null,
+                                          "overloadedDeclarations": [
+                                            null
+                                          ],
+                                          "referencedDeclaration": 413,
+                                          "type": "bytes32",
+                                          "value": "commitHash"
+                                        },
+                                        "id": 443,
+                                        "name": "Identifier",
+                                        "src": "1082:10:2"
+                                      }
+                                    ],
+                                    "id": 444,
+                                    "name": "BinaryOperation",
+                                    "src": "1055:37:2"
+                                  }
+                                ],
+                                "id": 445,
+                                "name": "FunctionCall",
+                                "src": "1048:45:2"
+                              }
+                            ],
+                            "id": 446,
+                            "name": "ExpressionStatement",
+                            "src": "1048:45:2"
+                          }
+                        ],
+                        "id": 447,
+                        "name": "Block",
+                        "src": "1034:70:2"
+                      }
+                    ],
+                    "id": 448,
+                    "name": "ForStatement",
+                    "src": "979:125:2"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "uint256",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_bytes32",
+                                  "typeString": "bytes32"
+                                }
+                              ],
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "push",
+                              "referencedDeclaration": null,
+                              "type": "function (bytes32) returns (uint256)"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": true,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "type": "bytes32[] storage ref"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 358,
+                                      "type": "mapping(bytes32 => bytes32[] storage ref)",
+                                      "value": "commitHashes"
+                                    },
+                                    "id": 449,
+                                    "name": "Identifier",
+                                    "src": "1114:12:2"
+                                  },
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 417,
+                                      "type": "bytes32",
+                                      "value": "branch"
+                                    },
+                                    "id": 450,
+                                    "name": "Identifier",
+                                    "src": "1127:6:2"
+                                  }
+                                ],
+                                "id": 451,
+                                "name": "IndexAccess",
+                                "src": "1114:20:2"
+                              }
+                            ],
+                            "id": 452,
+                            "name": "MemberAccess",
+                            "src": "1114:25:2"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 413,
+                              "type": "bytes32",
+                              "value": "commitHash"
+                            },
+                            "id": 453,
+                            "name": "Identifier",
+                            "src": "1140:10:2"
+                          }
+                        ],
+                        "id": 454,
+                        "name": "FunctionCall",
+                        "src": "1114:37:2"
+                      }
+                    ],
+                    "id": 455,
+                    "name": "ExpressionStatement",
+                    "src": "1114:37:2"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "struct Repo.Commit storage ref"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": true,
+                              "type": "struct Repo.Commit storage ref"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 362,
+                                  "type": "mapping(bytes32 => struct Repo.Commit storage ref)",
+                                  "value": "commits"
+                                },
+                                "id": 456,
+                                "name": "Identifier",
+                                "src": "1161:7:2"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 413,
+                                  "type": "bytes32",
+                                  "value": "commitHash"
+                                },
+                                "id": 457,
+                                "name": "Identifier",
+                                "src": "1169:10:2"
+                              }
+                            ],
+                            "id": 458,
+                            "name": "IndexAccess",
+                            "src": "1161:19:2"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "isStructConstructorCall": true,
+                              "lValueRequested": false,
+                              "names": [
+                                "commitHash",
+                                "ipfsHash",
+                                "author",
+                                "at"
+                              ],
+                              "type": "struct Repo.Commit memory",
+                              "type_conversion": false
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 353,
+                                  "type": "type(struct Repo.Commit storage pointer)",
+                                  "value": "Commit"
+                                },
+                                "id": 459,
+                                "name": "Identifier",
+                                "src": "1183:6:2"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 413,
+                                  "type": "bytes32",
+                                  "value": "commitHash"
+                                },
+                                "id": 460,
+                                "name": "Identifier",
+                                "src": "1216:10:2"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 415,
+                                  "type": "string memory",
+                                  "value": "ipfsHash"
+                                },
+                                "id": 461,
+                                "name": "Identifier",
+                                "src": "1250:8:2"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 419,
+                                  "type": "address",
+                                  "value": "author"
+                                },
+                                "id": 462,
+                                "name": "Identifier",
+                                "src": "1280:6:2"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 483,
+                                  "type": "uint256",
+                                  "value": "now"
+                                },
+                                "id": 463,
+                                "name": "Identifier",
+                                "src": "1304:3:2"
+                              }
+                            ],
+                            "id": 464,
+                            "name": "FunctionCall",
+                            "src": "1183:135:2"
+                          }
+                        ],
+                        "id": 465,
+                        "name": "Assignment",
+                        "src": "1161:157:2"
+                      }
+                    ],
+                    "id": 466,
+                    "name": "ExpressionStatement",
+                    "src": "1161:157:2"
+                  }
+                ],
+                "id": 467,
+                "name": "Block",
+                "src": "892:433:2"
+              }
+            ],
+            "id": 468,
+            "name": "FunctionDefinition",
+            "src": "791:534:2"
+          }
+        ],
+        "id": 469,
+        "name": "ContractDefinition",
+        "src": "26:1301:2"
+      }
+    ],
+    "id": 470,
+    "name": "SourceUnit",
+    "src": "0:1327:2"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.18+commit.9cf6e910.Emscripten.clang"
+  },
+  "networks": {
+    "1518848643656": {
+      "events": {},
+      "links": {},
+      "address": "0x7c9d49ed290a53042b7f58093abb6d43172b204a"
+    }
+  },
+  "schemaVersion": "1.0.1",
+  "updatedAt": "2018-02-17T06:26:27.410Z"
+}

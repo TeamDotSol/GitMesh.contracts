@@ -1,8 +1,8 @@
-var ConvertLib = artifacts.require("./ConvertLib.sol");
-var MetaCoin = artifacts.require("./MetaCoin.sol");
+const Repo = artifacts.require("./Repo.sol")
+const Organization = artifacts.require("./Organization.sol")
 
 module.exports = function(deployer) {
-  deployer.deploy(ConvertLib);
-  deployer.link(ConvertLib, MetaCoin);
-  deployer.deploy(MetaCoin);
-};
+  deployer.deploy(Organization)
+  deployer.deploy(Repo)
+  deployer.link(Organization, Repo)
+}
