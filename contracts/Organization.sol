@@ -116,7 +116,7 @@ contract Organization {
         assert(senderRole.commit);
 
         Repository repo = Repository(repos[repoName]);
-        Repository(repos[repoName]).commit(commitHash, ipfsHash, branch, msg.sender);
+        repo.commit(commitHash, ipfsHash, branch, msg.sender);
 
         Commit(commitHash);
     }
