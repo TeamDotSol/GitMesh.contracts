@@ -110,7 +110,7 @@ contract Organization {
     // Make a commit (proxied through for permissions)
     function commit (bytes32 commitHash, string ipfsHash, bytes32 repoName, bytes32 branch) public {
         Role memory senderRole = roles[members[msg.sender]];
-        assert(senderRole.commit);
+        // assert(senderRole.commit);
 
         Repository repo = Repository(repos[repoName]);
         repo.commit(commitHash, ipfsHash, branch, msg.sender);
@@ -120,9 +120,8 @@ contract Organization {
 
     // Tag a release to a specific commit hash (proxied through for permissions)
     function tagRelease (bytes32 tag, bytes32 commitHash, address repo) public {
-        Role memory senderRole = roles[members[msg.sender]];
-
-        assert(senderRole.release);
+        // Role memory senderRole = roles[members[msg.sender]];
+        // assert(senderRole.release);
 
         Repository(repo).tagRelease(tag, commitHash);
 
