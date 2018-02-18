@@ -1,6 +1,6 @@
 pragma solidity ^0.4.12;
 
-import "./Repo.sol";
+import "./Repository.sol";
 
 contract Organization {
     // ----------------------------------------------
@@ -47,6 +47,10 @@ contract Organization {
     // ----------------------------------------------   
     // ------------ Getter Functions ----------------
     // ----------------------------------------------
+
+    function getMemberRole(address member) public view returns (bytes32 role) {
+        return members[member];
+    }
 
     function getRole (bytes32 role) public view returns (bool create, bool release, bool commit, bool merge) {
         Role memory r = roles[role];
@@ -100,19 +104,19 @@ contract Organization {
         assert(senderRole.create);
         assert(repos[name] == 0x0);
 
-        repos[name] = address(new Repo());
+        repos[name] = address(new Repository());
         repoNames.push(name);
 
         RepoCreated(name, repos[name]);
     }
 
     // Make a commit (proxied through for permissions)
-    function commit (bytes32 commitHash, string ipfsHash, address repo, bytes32 branch) public {
+    function commit (bytes32 commitHash, string ipfsHash, bytes32 repoName, bytes32 branch) public {
         Role memory senderRole = roles[members[msg.sender]];
-
         assert(senderRole.commit);
-    
-        Repo(repo).commit(commitHash, ipfsHash, branch, msg.sender);
+
+        Repository repo = Repository(repos[repoName]);
+        Repository(repos[repoName]).commit(commitHash, ipfsHash, branch, msg.sender);
 
         Commit(commitHash);
     }
@@ -123,7 +127,7 @@ contract Organization {
 
         assert(senderRole.release);
 
-        Repo(repo).tagRelease(tag, commitHash);
+        Repository(repo).tagRelease(tag, commitHash);
 
         Release(tag);
     }

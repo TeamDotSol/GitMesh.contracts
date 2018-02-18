@@ -9,6 +9,7 @@ contract IOrganization {
     function getRole (bytes32 role) public view returns (bool create, bool release, bool commit, bool merge) {}
     function getRepo (bytes32 name) public view returns (address repo) {}
     function listRepos () public view returns (bytes32[] names) {}
+    function getMemberRole(address member) public view returns (bytes32 role) {}
     function createRole (bytes32 role, bool create, bool release, bool commit, bool merge) external {}
     function assignRole (address member, bytes32 role) external {}
     function createRepo (bytes32 name) external {}

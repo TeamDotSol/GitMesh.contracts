@@ -1,6 +1,6 @@
 pragma solidity ^0.4.12;
 
-contract Repo {
+contract Repository {
     address public organization;
 
     struct Commit {
@@ -20,7 +20,7 @@ contract Repo {
         _;
     }
 
-    function Repo () public {
+    function Repository () public {
         organization = msg.sender;
     }
 

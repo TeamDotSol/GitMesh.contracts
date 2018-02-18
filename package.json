@@ -12,7 +12,7 @@
   "devDependencies": {},
   "scripts": {
     "migrate": "node_modules/truffle/build/cli.bundled.js migrate",
-    "test": "mocha"
+    "test": "node_modules/truffle/build/cli.bundled.js test"
   },
   "repository": {
     "type": "git",
