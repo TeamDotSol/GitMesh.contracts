@@ -53,9 +53,9 @@ contract Repository {
     // Make a commit
     function commit (bytes32 commitHash, string ipfsHash, bytes32 branch, address author) public onlyOrg {
         // make sure this branch does not already have a commit by this hash
-        for (uint i = 0; i < commitHashes[branch].length; i++) {
-            assert(commitHashes[branch][i] != commitHash);
-        }
+        // for (uint i = 0; i < commitHashes[branch].length; i++) {
+            // assert(commitHashes[branch][i] != commitHash);
+        // }
 
         commitHashes[branch].push(commitHash);
         commits[commitHash] = Commit({
