@@ -99,9 +99,6 @@ contract Organization {
 
     // Add a new repo to the org
     function createRepo (bytes32 name) external {
-        Role memory senderRole = roles[members[msg.sender]];
-
-        assert(senderRole.create);
         assert(repos[name] == 0x0);
 
         repos[name] = address(new Repository());
