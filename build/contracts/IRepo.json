@@ -1,0 +1,415 @@
+{
+  "contractName": "IRepo",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "tag",
+          "type": "bytes32"
+        }
+      ],
+      "name": "getRelease",
+      "outputs": [
+        {
+          "name": "commitHash",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "branch",
+          "type": "bytes32"
+        }
+      ],
+      "name": "getCommitHashes",
+      "outputs": [
+        {
+          "name": "_commitHashes",
+          "type": "bytes32[]"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getTags",
+      "outputs": [
+        {
+          "name": "_tags",
+          "type": "bytes32[]"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x6060604052341561000f57600080fd5b6101e48061001e6000396000f300606060405260043610610057576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680637f698e921461005c578063995d9ab71461009f578063cc5b0a1514610109575b600080fd5b341561006757600080fd5b610081600480803560001916906020019091905050610185565b60405180826000191660001916815260200191505060405180910390f35b34156100aa57600080fd5b6100b261018c565b6040518080602001828103825283818151815260200191508051906020019060200280838360005b838110156100f55780820151818401526020810190506100da565b505050509050019250505060405180910390f35b341561011457600080fd5b61012e600480803560001916906020019091905050610197565b6040518080602001828103825283818151815260200191508051906020019060200280838360005b83811015610171578082015181840152602081019050610156565b505050509050019250505060405180910390f35b6000919050565b6101946101a4565b90565b61019f6101a4565b919050565b6020604051908101604052806000815250905600a165627a7a723058206348fd7c471c99912b440f2829683d9dd81bbc9d7c4e3ed7044e45081fd8e7550029",
+  "deployedBytecode": "0x606060405260043610610057576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680637f698e921461005c578063995d9ab71461009f578063cc5b0a1514610109575b600080fd5b341561006757600080fd5b610081600480803560001916906020019091905050610185565b60405180826000191660001916815260200191505060405180910390f35b34156100aa57600080fd5b6100b261018c565b6040518080602001828103825283818151815260200191508051906020019060200280838360005b838110156100f55780820151818401526020810190506100da565b505050509050019250505060405180910390f35b341561011457600080fd5b61012e600480803560001916906020019091905050610197565b6040518080602001828103825283818151815260200191508051906020019060200280838360005b83811015610171578082015181840152602081019050610156565b505050509050019250505060405180910390f35b6000919050565b6101946101a4565b90565b61019f6101a4565b919050565b6020604051908101604052806000815250905600a165627a7a723058206348fd7c471c99912b440f2829683d9dd81bbc9d7c4e3ed7044e45081fd8e7550029",
+  "sourceMap": "26:260:1:-;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "26:260:1:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;47:77;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;224:60;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:2;8:100;;;99:1;94:3;90;84:5;80:1;75:3;71;64:6;52:2;49:1;45:3;40:15;;8:100;;;12:14;3:109;;;;;;;;;;;;;;;;;129:90:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:2;8:100;;;99:1;94:3;90;84:5;80:1;75:3;71;64:6;52:2;49:1;45:3;40:15;;8:100;;;12:14;3:109;;;;;;;;;;;;;;;;;47:77:1;102:18;47:77;;;:::o;224:60::-;265:15;;:::i;:::-;224:60;:::o;129:90::-;192:23;;:::i;:::-;129:90;;;:::o;26:260::-;;;;;;;;;;;;;;;:::o",
+  "source": "pragma solidity ^0.4.12;\n\ncontract IRepo {\n    function getRelease (bytes32 tag) public view returns (bytes32 commitHash) {}\n    function getCommitHashes (bytes32 branch) public view returns (bytes32[] _commitHashes) {}\n    function getTags () public view returns (bytes32[] _tags) {}\n}",
+  "sourcePath": "/Users/leondo/Desktop/GitMesh.contracts/contracts/IRepo.sol",
+  "ast": {
+    "attributes": {
+      "absolutePath": "/Users/leondo/Desktop/GitMesh.contracts/contracts/IRepo.sol",
+      "exportedSymbols": {
+        "IRepo": [
+          134
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "^",
+            "0.4",
+            ".12"
+          ]
+        },
+        "id": 109,
+        "name": "PragmaDirective",
+        "src": "0:24:1"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "documentation": null,
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            134
+          ],
+          "name": "IRepo",
+          "scope": 135
+        },
+        "children": [
+          {
+            "attributes": {
+              "constant": true,
+              "implemented": true,
+              "isConstructor": false,
+              "modifiers": [
+                null
+              ],
+              "name": "getRelease",
+              "payable": false,
+              "scope": 134,
+              "stateMutability": "view",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "tag",
+                      "scope": 117,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bytes32",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bytes32",
+                          "type": "bytes32"
+                        },
+                        "id": 110,
+                        "name": "ElementaryTypeName",
+                        "src": "68:7:1"
+                      }
+                    ],
+                    "id": 111,
+                    "name": "VariableDeclaration",
+                    "src": "68:11:1"
+                  }
+                ],
+                "id": 112,
+                "name": "ParameterList",
+                "src": "67:13:1"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "commitHash",
+                      "scope": 117,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bytes32",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bytes32",
+                          "type": "bytes32"
+                        },
+                        "id": 113,
+                        "name": "ElementaryTypeName",
+                        "src": "102:7:1"
+                      }
+                    ],
+                    "id": 114,
+                    "name": "VariableDeclaration",
+                    "src": "102:18:1"
+                  }
+                ],
+                "id": 115,
+                "name": "ParameterList",
+                "src": "101:20:1"
+              },
+              {
+                "attributes": {
+                  "statements": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 116,
+                "name": "Block",
+                "src": "122:2:1"
+              }
+            ],
+            "id": 117,
+            "name": "FunctionDefinition",
+            "src": "47:77:1"
+          },
+          {
+            "attributes": {
+              "constant": true,
+              "implemented": true,
+              "isConstructor": false,
+              "modifiers": [
+                null
+              ],
+              "name": "getCommitHashes",
+              "payable": false,
+              "scope": 134,
+              "stateMutability": "view",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "branch",
+                      "scope": 126,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bytes32",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bytes32",
+                          "type": "bytes32"
+                        },
+                        "id": 118,
+                        "name": "ElementaryTypeName",
+                        "src": "155:7:1"
+                      }
+                    ],
+                    "id": 119,
+                    "name": "VariableDeclaration",
+                    "src": "155:14:1"
+                  }
+                ],
+                "id": 120,
+                "name": "ParameterList",
+                "src": "154:16:1"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_commitHashes",
+                      "scope": 126,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bytes32[] memory",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "length": null,
+                          "type": "bytes32[] storage pointer"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "name": "bytes32",
+                              "type": "bytes32"
+                            },
+                            "id": 121,
+                            "name": "ElementaryTypeName",
+                            "src": "192:7:1"
+                          }
+                        ],
+                        "id": 122,
+                        "name": "ArrayTypeName",
+                        "src": "192:9:1"
+                      }
+                    ],
+                    "id": 123,
+                    "name": "VariableDeclaration",
+                    "src": "192:23:1"
+                  }
+                ],
+                "id": 124,
+                "name": "ParameterList",
+                "src": "191:25:1"
+              },
+              {
+                "attributes": {
+                  "statements": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 125,
+                "name": "Block",
+                "src": "217:2:1"
+              }
+            ],
+            "id": 126,
+            "name": "FunctionDefinition",
+            "src": "129:90:1"
+          },
+          {
+            "attributes": {
+              "constant": true,
+              "implemented": true,
+              "isConstructor": false,
+              "modifiers": [
+                null
+              ],
+              "name": "getTags",
+              "payable": false,
+              "scope": 134,
+              "stateMutability": "view",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 127,
+                "name": "ParameterList",
+                "src": "241:2:1"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_tags",
+                      "scope": 133,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bytes32[] memory",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "length": null,
+                          "type": "bytes32[] storage pointer"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "name": "bytes32",
+                              "type": "bytes32"
+                            },
+                            "id": 128,
+                            "name": "ElementaryTypeName",
+                            "src": "265:7:1"
+                          }
+                        ],
+                        "id": 129,
+                        "name": "ArrayTypeName",
+                        "src": "265:9:1"
+                      }
+                    ],
+                    "id": 130,
+                    "name": "VariableDeclaration",
+                    "src": "265:15:1"
+                  }
+                ],
+                "id": 131,
+                "name": "ParameterList",
+                "src": "264:17:1"
+              },
+              {
+                "attributes": {
+                  "statements": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 132,
+                "name": "Block",
+                "src": "282:2:1"
+              }
+            ],
+            "id": 133,
+            "name": "FunctionDefinition",
+            "src": "224:60:1"
+          }
+        ],
+        "id": 134,
+        "name": "ContractDefinition",
+        "src": "26:260:1"
+      }
+    ],
+    "id": 135,
+    "name": "SourceUnit",
+    "src": "0:286:1"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.19+commit.c4cbbb05.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "1.0.1",
+  "updatedAt": "2018-02-18T08:37:36.713Z"
+}
